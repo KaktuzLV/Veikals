@@ -67,6 +67,9 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        @if(in_array(Auth::user()->role, ['support', 'admin']))
+                            <x-dropdown-link :href="route('admin.dashboard')">{{ __('Admin Dashboard') }}</x-dropdown-link>
+                        @endif
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -124,12 +127,15 @@
             </div>
 
             <div class="mt-3 space-y-1">
+                @if(in_array(Auth::user()->role, ['support', 'admin']))
+                    <x-responsive-nav-link :href="route('admin.dashboard')">{{ __('Admin Dashboard') }}</x-responsive-nav-link>
+                @endif
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                                           onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
