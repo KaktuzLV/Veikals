@@ -11,7 +11,7 @@
                     <div class="divide-y divide-gray-300 bg-white overflow-hidden shadow-sm sm:rounded-lg border-b border-gray-200">
                         <a href="{{ route('admin.dashboard') }}" class="block p-4 hover:bg-gray-50 cursor-pointer">{{ __('Admin Dashboard') }}</a>
                         @if(Auth::user()->role === 'admin')
-                            <a href="#" class="block p-4 hover:bg-gray-50 cursor-pointer">{{ __('Categories') }}</a>
+                            <a href="{{ route('admin.categories.index') }}" class="block p-4 hover:bg-gray-50 cursor-pointer">{{ __('Categories') }}</a>
                             <a href="#" class="block p-4 hover:bg-gray-50 cursor-pointer">{{ __('Products') }}</a>
                             <a href="#" class="block p-4 hover:bg-gray-50 cursor-pointer">{{ __('Orders') }}</a>
                             <a href="#" class="block p-4 hover:bg-gray-50 cursor-pointer">{{ __('Users') }}</a>
@@ -22,6 +22,7 @@
                     </div>
                 </div>
                 <div class="col-span-9">
+                    <x-errors></x-errors>
                     {{ $slot }}
                 </div>
             </div>

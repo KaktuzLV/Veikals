@@ -1,5 +1,6 @@
 <?php
 
+use \App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/category/{category}', [CategoriesController::class, 'show'])->name('categories.show');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
