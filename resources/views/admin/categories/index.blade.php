@@ -12,8 +12,8 @@
             </div>
             <table class="table-auto w-full">
                 <thead>
-                    <tr>
-                        <th class="text-left">ID</th>
+                    <tr class = "border-b border-green-400">
+                        <th class="text-left ">ID</th>
                         <th class="text-left">Name</th>
                         <th class="text-right">Actions</th>
                     </tr>

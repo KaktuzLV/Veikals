@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
-use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Color extends Model
 {
     use HasSlug;
 
@@ -24,10 +24,5 @@ class Category extends Model
     public function getRouteKeyName()
     {
         return 'slug';
-    }
-
-    public function products()
-    {
-        return $this->hasMany(Product::class);
     }
 }
