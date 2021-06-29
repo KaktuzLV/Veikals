@@ -36,6 +36,11 @@
                             </x-slot>
                         </x-dropdown>
                     </div>
+                    @if(!empty(session()->get('cart')))
+                        <x-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')">
+                            {{ __('Cart') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -106,6 +111,11 @@
             @foreach($menuCategories as $category)
                 <x-responsive-nav-link :href="route('categories.show', $category)">{{ $category->name }}</x-responsive-nav-link>
             @endforeach
+            @if(!empty(session()->get('cart')))
+                <x-responsive-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')">
+                    {{ __('Cart') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
         @if(Auth::guest())
             <div class="pt-2 pb-3 space-y-1">
