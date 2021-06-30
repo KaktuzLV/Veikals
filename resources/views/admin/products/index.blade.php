@@ -28,8 +28,8 @@
                         <tr>
                             <td class="text-left">{{ $product->id }}</td>
                             <td class="text-left">{{ $product->name }}</td>
-                            <td class="text-left">{{ $product->category->name }}</td>
-                            <td class="text-left">{{ $product->manufacturer->name }}</td>
+                            <td class="text-left">{{ $product->category ? $product->category->name : '' }}</td>
+                            <td class="text-left">{{ $product->manufacturer ? $product->manufacturer->name : '' }}</td>
                             <td class="text-left">{{ $product->colors()->pluck('name')->join(', ') }}</td>
                             <td class="text-left">{{ $product->sizes()->pluck('name')->join(', ') }}</td>
                             <td class="text-left">{{ number_format($product->price, 2, '.', '') }}</td>

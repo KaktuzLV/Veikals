@@ -7,7 +7,7 @@
 
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
-            <form method="post" action="{{ route('admin.products.update', $product) }}">
+            <form method="post" action="{{ route('admin.products.update', $product) }}" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="grid grid-cols-1 gap-6">
@@ -54,6 +54,10 @@
                     <label class="block" for="price">
                         <span class="text-gray-700">{{ __('Product Price') }}</span>
                         <input type="number" min="0" max="99999.99" step="0.01" class="mt-1 block w-full" id="price" name="price" value="{{ old('price', $product->price) }}" />
+                    </label>
+                    <label class="block" for="image">
+                        <span class="text-gray-700">{{ __('Product Image') }}</span>
+                        <input type="file" class="mt-1 block w-full" id="image" name="image" />
                     </label>
                     <div>
                         <x-button>{{ __('Save') }}</x-button>
