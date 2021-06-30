@@ -13,9 +13,9 @@
             <table class="table-auto w-full">
                 <thead>
                     <tr class = "border-b border-green-400">
-                        <th class="text-left">ID</th>
-                        <th class="text-left">Name</th>
-                        <th class="text-right">Actions</th>
+                        <th class="text-left ">{{__('ID')}}</th>
+                        <th class="text-left">{{__('Title')}}</th>
+                        <th class="text-right">{{__('Actions')}}</th>
                     </tr>
                 </thead>
                 <tbody>

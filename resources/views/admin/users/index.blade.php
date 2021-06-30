@@ -10,11 +10,11 @@
             <table class="table-auto w-full">
                 <thead>
                     <tr class = "border-b border-green-400">
-                        <th class="text-left">ID</th>
-                        <th class="text-left">Name</th>
-                        <th class="text-left">Email</th>
-                        <th class="text-left">Role</th>
-                        <th class="text-right">Actions</th>
+                        <th class="text-left ">{{__('ID')}}</th>
+                        <th class="text-left">{{__('Name')}}</th>
+                        <th class="text-left">{{__('Email')}}</th>
+                        <th class="text-left">{{__('Role')}}</th>
+                        <th class="text-right">{{__('Action')}}</th>
                     </tr>
                 </thead>
                 <tbody>
