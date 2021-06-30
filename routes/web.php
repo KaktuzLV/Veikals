@@ -25,5 +25,10 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{product}', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/remove/{product}', [CartController::class, 'remove'])->name('cart.remove');
 
+Route::get('/language/{lang}', function(string $lang) {
+    session()->put('lang', $lang);
+    return redirect()->back();
+})->where('lang', 'lv|en')->name('language.switch');
+
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';

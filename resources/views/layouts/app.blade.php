@@ -28,11 +28,13 @@
                 </div>
             </header>
             @endif
-                
+
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
+
+            @include('layouts.language-switch')
         </div>
     </body>
 </html>

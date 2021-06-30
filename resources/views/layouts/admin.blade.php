@@ -16,7 +16,6 @@
                             <a href="{{ route('admin.manufacturers.index') }}" class="block p-4 hover:bg-green-400 cursor-pointer">{{ __('Manufacturers') }}</a>
                             <a href="{{ route('admin.sizes.index') }}" class="block p-4 hover:bg-green-400 cursor-pointer">{{ __('Sizes') }}</a>
                             <a href="{{ route('admin.colors.index') }}" class="block p-4 hover:bg-green-400 cursor-pointer">{{ __('Colors') }}</a>
-                            <a href="#" class="block p-4 hover:bg-green-400 cursor-pointer">{{ __('Orders') }}</a>
                             <a href="{{ route('admin.users.index') }}" class="block p-4 hover:bg-green-400 cursor-pointer">{{ __('Users') }}</a>
                         @endif
                         @if(Auth::user()->role === 'support' || Auth::user()->role === 'admin')

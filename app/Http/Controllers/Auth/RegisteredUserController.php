@@ -49,6 +49,12 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        $locale = app()->getLocale();
+        $cart = session()->get('cart', []);
+
+        session()->put('lang', $locale);
+        session()->put('cart', $cart);
+
         return redirect(RouteServiceProvider::HOME);
     }
 }

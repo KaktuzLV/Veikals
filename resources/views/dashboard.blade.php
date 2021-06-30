@@ -7,7 +7,7 @@
 
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-green-600 text-white border-b border-gray-200">
-            Welcome Staff
+            {{ __('Welcome') }}
         </div>
     </div>
 </x-admin-layout>

@@ -30,7 +30,13 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
+        $locale = app()->getLocale();
+        $cart = session()->get('cart', []);
+
         $request->session()->regenerate();
+
+        session()->put('lang', $locale);
+        session()->put('cart', $cart);
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
@@ -45,9 +51,15 @@ class AuthenticatedSessionController extends Controller
     {
         Auth::guard('web')->logout();
 
+        $locale = app()->getLocale();
+        $cart = session()->get('cart', []);
+
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
+        session()->put('lang', $locale);
+        session()->put('cart', $cart);
 
         return redirect('/');
     }
